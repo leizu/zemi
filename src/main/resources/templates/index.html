@@ -1,0 +1,37 @@
+<!DOCTYPE html >
+<html  xmlns:th="http://www.thymeleaf.org">
+<head lang="ja">
+    <meta charset="UTF-8" />
+    <title>Record Writer</title>
+</head>
+<body>
+<form action="./" method="post" th:object="${recordForm}">
+    <h4 class="panel-title">
+        今日の出来事を記載する
+    </h4>
+    <label
+            for="title">Title:</label>
+    <input
+            placeholder="今日は何がありましたか？"
+            name="title" id="title" th:field="*{title}" type="text"/>
+    <label
+            for="record">Record:</label>
+                                    <textarea
+                                            name="record"
+                                            id="record"
+                                            cols="30"
+                                            rows="5"
+                                            placeholder="詳細に教えていただけますか？"
+                                            th:field="*{record}"></textarea>
+    <button type="submit" >送信</button>
+</form>
+
+<div th:each="record,iterStat  : ${records}" >
+    <h4 class="panel-title" th:text="${record.title}">
+    </h4>
+    <div class="panel-body" th:text="${record.record}">
+    </div>
+</div>
+
+</body>
+</html>
