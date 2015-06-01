@@ -3,8 +3,18 @@
 <head lang="ja">
     <meta charset="UTF-8" />
     <title>Record Writer</title>
+     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet"
+          href="/static/bower_components/bootstrap/dist/css/bootstrap.css"
+          th:href="@{/bower_components/bootstrap/dist/css/bootstrap.css}"/>
+      
 </head>
 <body>
+ <script src="/static/bower_components/jquery/dist/jquery.js"
+            th:src="@{/bower_components/jquery/dist/jquery.js}"></script>
+    <script src="/static/bower_components/bootstrap/dist/js/bootstrap.js"
+            th:src="@{/bower_components/bootstrap/dist/js/bootstrap.js}"></script>
+
 <form action="./" method="post" th:object="${recordForm}">
     <h4>
         今日の出来事を記載する
@@ -32,6 +42,7 @@
     <div class="panel-body" th:text="${record.record}">
     </div>
 </div>
+
 
 </body>
 </html>
