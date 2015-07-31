@@ -140,10 +140,24 @@
                             <div class="panel-body"
                                 th:text="${record.attack}"></div>
                         </div>
+                        </div>
+                        <div th:id="'record' + ${iterStat.index}"
+                            class="panel-collapse collapse in"
+                            role="tabpanel" aria-labelledby="headingOne">
+                            <div class="panel-body"
+                                th:text="${record.defense}"></div>
+                        </div>
+                        </div>
+                        <div th:id="'record' + ${iterStat.index}"
+                            class="panel-collapse collapse in"
+                            role="tabpanel" aria-labelledby="headingOne">
+                            <div class="panel-body"
+                                th:text="${record.stamina}"></div>
+                        </div>
                     </div>
                 </div>
-                <div class="col col-md-4 col-sm-6 col-xs-12 panel-group"
-                    th:if="${#lists.size(records) gt (iterStat.index + 1)}">
+                <div class="col col-md-4 col-sm-6 col-xs-12 panel-group">
+                 <div th:if="${#lists.size(records) gt (iterStat.index + 1)}">
                     <div class="panel panel-default">
                         <div class="panel-heading" role="tab"
                             th:id="headingOne + ${iterStat.index + 1}">
@@ -164,6 +178,21 @@
                                 th:text="${records[iterStat.index + 1].attack}">
                             </div>
                         </div>
+                        <div th:id="'record' + ${iterStat.index + 1}"
+                            class="panel-collapse collapse in"
+                            role="tabpanel" aria-labelledby="headingOne">
+                            <div class="panel-body"
+                                th:text="${records[iterStat.index + 1].defense}">
+                            </div>
+                        </div>
+                        <div th:id="'record' + ${iterStat.index + 1}"
+                            class="panel-collapse collapse in"
+                            role="tabpanel" aria-labelledby="headingOne">
+                            <div class="panel-body"
+                                th:text="${records[iterStat.index + 1].stamina}">
+                            </div>
+                        </div>
+                    </div>
                     </div>
                 </div>
                 <div class="col col-md-4 col-sm-6 col-xs-12 panel-group"
@@ -188,10 +217,21 @@
                                 th:text="${records[iterStat.index + 2].attack}">
                             </div>
                         </div>
+                         <div th:id="'record' + ${iterStat.index + 2}"
+                            class="panel-collapse collapse in"
+                            role="tabpanel" aria-labelledby="headingOne">
+                            <div class="panel-body"
+                                th:text="${records[iterStat.index + 2].defense}">
+                            </div>
+                        </div> <div th:id="'record' + ${iterStat.index + 2}"
+                            class="panel-collapse collapse in"
+                            role="tabpanel" aria-labelledby="headingOne">
+                            <div class="panel-body"
+                                th:text="${records[iterStat.index + 2].stamina}">
+                            </div>
                     </div>
                 </div>
     </div>
-</div>
     </form>
 </body>
 </html>
