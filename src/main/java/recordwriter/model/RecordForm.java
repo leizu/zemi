@@ -14,13 +14,13 @@ public class RecordForm {
 
     @NotNull
     @Size(min = 1,max=10)
-    private int stamina;
+    private Integer stamina;
     
     @NotNull
     @Size(min = 1,max=10)
-    private int attack;
+    private Integer attack;
    
     @NotNull
     @Size(min = 1,max=10)
-    private int defense;
+    private Integer defense;
 }
