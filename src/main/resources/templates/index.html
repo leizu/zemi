@@ -109,9 +109,7 @@
                                         col-sm-10 col-sm-offset-0
                                         col-xs-9 col-xs-offset-0">送信</button>
                               
-                            </div>
-                     
-                                   
+                            </div>               
                     </div>
                 </div>
             </div>
@@ -138,25 +136,16 @@
                             class="panel-collapse collapse in"
                             role="tabpanel" aria-labelledby="headingOne">
                             <div class="panel-body"
-                                th:text="${record.attack}"></div>
+                                th:text="${record.attack}" ></div>
                         </div>
                         </div>
-                        <div th:id="'record' + ${iterStat.index}"
-                            class="panel-collapse collapse in1"
-                            role="tabpanel" aria-labelledby="headingOne">
-                            <div class="panel-body1"
-                                th:text="${record.defense}"></div>
+                   
                         </div>
-                        </div>
-                        <div th:id="'record' + ${iterStat.index}"
-                            class="panel-collapse collapse in2"
-                            role="tabpanel" aria-labelledby="headingOne">
-                            <div class="panel-body2"
-                                th:text="${record.stamina}"></div>
-                        </div>
+                     
                     </div>
 
     </div>
     </form>
+  
 </body>
 </html>
