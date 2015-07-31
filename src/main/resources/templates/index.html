@@ -142,95 +142,20 @@
                         </div>
                         </div>
                         <div th:id="'record' + ${iterStat.index}"
-                            class="panel-collapse collapse in"
+                            class="panel-collapse collapse in1"
                             role="tabpanel" aria-labelledby="headingOne">
-                            <div class="panel-body"
+                            <div class="panel-body1"
                                 th:text="${record.defense}"></div>
                         </div>
                         </div>
                         <div th:id="'record' + ${iterStat.index}"
-                            class="panel-collapse collapse in"
+                            class="panel-collapse collapse in2"
                             role="tabpanel" aria-labelledby="headingOne">
-                            <div class="panel-body"
+                            <div class="panel-body2"
                                 th:text="${record.stamina}"></div>
                         </div>
                     </div>
-                </div>
-                <div class="col col-md-4 col-sm-6 col-xs-12 panel-group">
-                 <div th:if="${#lists.size(records) gt (iterStat.index + 1)}">
-                    <div class="panel panel-default">
-                        <div class="panel-heading" role="tab"
-                            th:id="headingOne + ${iterStat.index + 1}">
-                            <h4 class="panel-title">
-                                <a data-toggle="collapse"
-                                    data-parent="#accordion"
-                                    th:href="'#record' + ${iterStat.index + 1}"
-                                    aria-expanded="true"
-                                    aria-controls="collapseOne"
-                                    th:text="${records[iterStat.index + 1].name}">
-                                </a>
-                            </h4>
-                        </div>
-                        <div th:id="'record' + ${iterStat.index + 1}"
-                            class="panel-collapse collapse in"
-                            role="tabpanel" aria-labelledby="headingOne">
-                            <div class="panel-body"
-                                th:text="${records[iterStat.index + 1].attack}">
-                            </div>
-                        </div>
-                        <div th:id="'record' + ${iterStat.index + 1}"
-                            class="panel-collapse collapse in"
-                            role="tabpanel" aria-labelledby="headingOne">
-                            <div class="panel-body"
-                                th:text="${records[iterStat.index + 1].defense}">
-                            </div>
-                        </div>
-                        <div th:id="'record' + ${iterStat.index + 1}"
-                            class="panel-collapse collapse in"
-                            role="tabpanel" aria-labelledby="headingOne">
-                            <div class="panel-body"
-                                th:text="${records[iterStat.index + 1].stamina}">
-                            </div>
-                        </div>
-                    </div>
-                    </div>
-                </div>
-                <div class="col col-md-4 col-sm-6 col-xs-12 panel-group"
-                    th:if="${#lists.size(records) gt iterStat.index + 2}">
-                    <div class="panel panel-default">
-                        <div class="panel-heading" role="tab"
-                            th:id="headingOne + ${iterStat.index + 2}">
-                            <h4 class="panel-title">
-                                <a data-toggle="collapse"
-                                    data-parent="#accordion"
-                                    th:href="'#record' + ${iterStat.index + 2}"
-                                    aria-expanded="true"
-                                    aria-controls="collapseOne"
-                                    th:text="${records[iterStat.index + 2].name}">
-                                </a>
-                            </h4>
-                        </div>
-                        <div th:id="'record' + ${iterStat.index + 2}"
-                            class="panel-collapse collapse in"
-                            role="tabpanel" aria-labelledby="headingOne">
-                            <div class="panel-body"
-                                th:text="${records[iterStat.index + 2].attack}">
-                            </div>
-                        </div>
-                         <div th:id="'record' + ${iterStat.index + 2}"
-                            class="panel-collapse collapse in"
-                            role="tabpanel" aria-labelledby="headingOne">
-                            <div class="panel-body"
-                                th:text="${records[iterStat.index + 2].defense}">
-                            </div>
-                        </div> <div th:id="'record' + ${iterStat.index + 2}"
-                            class="panel-collapse collapse in"
-                            role="tabpanel" aria-labelledby="headingOne">
-                            <div class="panel-body"
-                                th:text="${records[iterStat.index + 2].stamina}">
-                            </div>
-                    </div>
-                </div>
+
     </div>
     </form>
 </body>
