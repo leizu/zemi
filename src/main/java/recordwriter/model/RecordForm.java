@@ -1,20 +1,26 @@
 package recordwriter.model;
 
-import lombok.Data;
-
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
-/**
- * Created by KAJIWARAYutaka on 2015/05/17.
- */
+import lombok.Data;
+
+
 @Data
 public class RecordForm {
     @NotNull
-    @Size(min = 1,max=70)
-    private String title;
+    @Size(min = 1,max=20)
+    private String name;
 
     @NotNull
-    @Size(min = 1,max=140)
-    private String record;
+    @Size(min = 1,max=10)
+    private int stamina;
+    
+    @NotNull
+    @Size(min = 1,max=10)
+    private int attack;
+   
+    @NotNull
+    @Size(min = 1,max=10)
+    private int defense;
 }

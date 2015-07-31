@@ -8,15 +8,12 @@ import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+
 import recordwriter.Repository.RecordRepository;
 import recordwriter.model.Record;
 import recordwriter.model.RecordForm;
 
-import java.util.Date;
 
-/**
- * Created by KAJIWARAYutaka on 2015/05/17.
- */
 @Controller
 @RequestMapping(value="/")
 public class IndexController {
@@ -39,9 +36,10 @@ public class IndexController {
             return showPage(null);
         }
         Record record = new Record();
-        record.setTitle(recordForm.getTitle());
-        record.setRecord(recordForm.getRecord());
-        record.setDate(new Date());
+        record.setName(recordForm.getName());
+        record.setStamina(recordForm.getStamina());
+        record.setAttack(recordForm.getAttack());
+        record.setDefense(recordForm.getDefense());
         recordRepository.save(record);
         return "redirect:/";
     }

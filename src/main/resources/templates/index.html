@@ -1,61 +1,197 @@
 <!DOCTYPE html >
-<html  xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org" >
 <head lang="ja">
-    <meta charset="UTF-8" />
-    <title>Record Writer</title>
-     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet"
-          href="/static/bower_components/bootstrap/dist/css/bootstrap.css"
-          th:href="@{/bower_components/bootstrap/dist/css/bootstrap.css}"/>
-      
+<meta charset="UTF-8" />
+<title>Record Writer</title>
+<link rel="stylesheet"
+    href="/static/bower_components/bootstrap/dist/css/bootstrap.css"
+    th:href="@{/bower_components/bootstrap/dist/css/bootstrap.css}" />
+<STYLE type="text/css">
+<!--
+.row {
+    margin-bottom:15px
+}
+.row > div {
+    border: 1px solid #000000;  
+}
+-->
+</STYLE>
 </head>
 <body>
- <script src="/static/bower_components/jquery/dist/jquery.js"
-            th:src="@{/bower_components/jquery/dist/jquery.js}"></script>
-    <script src="/static/bower_components/bootstrap/dist/js/bootstrap.js"
-            th:src="@{/bower_components/bootstrap/dist/js/bootstrap.js}"></script>
-
-<form action="./" method="post" th:object="${recordForm}">
-      <div class="panel panel-default">
-        <div class="panel-heading" role="tab" id="headingOne">
-            <h4 class="panel-title">
-                <a data-toggle="collapse" data-parent="#writeRecord" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                    <span class="glyphicon glyphicon-edit" aria-hidden="true"></span>
-                    今日の出来事を記載する
-                </a>
-            </h4>
-        </div>
-        <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
-            <div class="panel-body">
-                <div class="form-group">
-                    <label for="title">Title:</label>
-                    <input
-                            placeholder="今日は何がありましたか？"
-                            name="title" id="title" th:field="*{title}" type="text"/>
+    <script src="/static/bower_components/jquery/dist/jquery.js"
+        th:src="@{/bower_components/jquery/dist/jquery.js}"></script>
+    <script
+        src="/static/bower_components/bootstrap/dist/js/bootstrap.js"
+        th:src="@{/bower_components/bootstrap/dist/js/bootstrap.js}"></script>
+ 
+    <form name="form" action="./" method="post" th:object="${recordForm}">
+           <div class="container"> 
+        <div class="panel panel-default">
+            <div class="panel-heading" role="tab" id="headingOne">
+                <h4 class="panel-title">
+                    <a data-toggle="collapse"
+                        data-parent="#writeRecord"
+                        href="#collapseOne" aria-expanded="true"
+                        aria-controls="collapseOne"> <span
+                        class="glyphicon glyphicon-edit"
+                        aria-hidden="true"></span> 幻獣一覧
+                    </a>
+                </h4>
+            </div>
+            <div id="collapseOne" class="panel-collapse collapse in"
+                role="tabpanel" aria-labelledby="headingOne">
+                <div class="panel-body">
+                    <div class="row" style="margin-top: 20px">
+                           <div class="form-group"  >
+                            <label
+                               class="control-label col col-md-1 col-sm-2 col-xs-3"
+                               
+                                for="title">名前:</label>
+                           <div class="col col-md-5 col-sm-10 col-xs-9 ">
+                                    <input
+                                        class="form-control"
+                                        placeholder="幻獣名"
+                                        name="name" id="name" th:field="*{name}" type="text"/>
+                                </div>
+                           
+                        </div>
+                    </div>
+                    <div class="row" style="margin-top: 20px">
+                           <div class="form-group"  >
+                            <label
+                               class="control-label col col-md-1 col-sm-2 col-xs-3"
+                               
+                                for="title">Attack:</label>
+                           <div class="col col-md-5 col-sm-10 col-xs-9 ">
+                                    <input
+                                        class="form-control"
+                                        placeholder="アタック"
+                                        name="attack" id="attack" th:field="*{attack}" type="number"/>
+                                </div>
+                           
+                        </div>
+                    </div><div class="row" style="margin-top: 20px">
+                           <div class="form-group"  >
+                            <label
+                               class="control-label col col-md-1 col-sm-2 col-xs-3"
+                               
+                                for="title">Defense:</label>
+                           <div class="col col-md-5 col-sm-10 col-xs-9 ">
+                                    <input
+                                        class="form-control"
+                                        placeholder="ディフェンス"
+                                        name="defense" id="defense" th:field="*{defense}" type="number"/>
+                                </div>
+                           
+                        </div>
+                    </div><div class="row" style="margin-top: 20px">
+                           <div class="form-group"  >
+                            <label
+                               class="control-label col col-md-1 col-sm-2 col-xs-3"
+                               
+                                for="title">Stamina:</label>
+                           <div class="col col-md-5 col-sm-10 col-xs-9 ">
+                                    <input
+                                        class="form-control"
+                                        placeholder=スタミナ""
+                                        name="stamina" id="stamina" th:field="*{stamina}" type="number"/>
+                                </div>
+                           
+                        </div>
+                    </div>
+              
+                    <div class="row" style="margin-top: 20px">
+                     <div class="form-group">
+                               
+                              <button type="submit"
+                                class="btn btn-default col
+                                        col-md-2 col-md-offset-0
+                                        col-sm-10 col-sm-offset-0
+                                        col-xs-9 col-xs-offset-0">送信</button>
+                              
+                            </div>
+                     
+                                   
+                    </div>
                 </div>
-                <div class="form-group">
-                    <label for="record">Record:</label>
-                    <textarea
-                        name="record" id="record" cols="30" rows="5"
-                        placeholder="詳細に教えていただけますか？"
-                        th:field="*{record}"></textarea>
-                </div>
-                <button type="submit" class="btn btn-default" >送信</button>
             </div>
         </div>
-    </div>
-   
+    
 
     
-</form>
-
-<div th:each="record,iterStat  : ${records}" >
-    <h4 class="panel-title" th:text="${record.title}">
-    </h4>
-    <div class="panel-body" th:text="${record.record}">
+     <div class="row" th:each="record,iterStat  : ${records}"
+                th:remove="${iterStat.index mod 3 != 0 } ? all">
+                <div class="col col-md-4 col-sm-6 col-xs-12 panel-group">
+                    <div class="panel panel-default">
+                        <div class="panel-heading" role="tab"
+                            th:id="headingOne + ${iterStat.index}">
+                            <h4 class="panel-title">
+                                <a data-toggle="collapse"
+                                    data-parent="#accordion"
+                                    th:href="'#record' + ${iterStat.index}"
+                                    aria-expanded="true"
+                                    aria-controls="collapseOne"
+                                    th:text="${record.name}"> </a>
+                            </h4>
+                        </div>
+                        <div th:id="'record' + ${iterStat.index}"
+                            class="panel-collapse collapse in"
+                            role="tabpanel" aria-labelledby="headingOne">
+                            <div class="panel-body"
+                                th:text="${record.attack}"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col col-md-4 col-sm-6 col-xs-12 panel-group"
+                    th:if="${#lists.size(records) gt (iterStat.index + 1)}">
+                    <div class="panel panel-default">
+                        <div class="panel-heading" role="tab"
+                            th:id="headingOne + ${iterStat.index + 1}">
+                            <h4 class="panel-title">
+                                <a data-toggle="collapse"
+                                    data-parent="#accordion"
+                                    th:href="'#record' + ${iterStat.index + 1}"
+                                    aria-expanded="true"
+                                    aria-controls="collapseOne"
+                                    th:text="${records[iterStat.index + 1].name}">
+                                </a>
+                            </h4>
+                        </div>
+                        <div th:id="'record' + ${iterStat.index + 1}"
+                            class="panel-collapse collapse in"
+                            role="tabpanel" aria-labelledby="headingOne">
+                            <div class="panel-body"
+                                th:text="${records[iterStat.index + 1].attack}">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col col-md-4 col-sm-6 col-xs-12 panel-group"
+                    th:if="${#lists.size(records) gt iterStat.index + 2}">
+                    <div class="panel panel-default">
+                        <div class="panel-heading" role="tab"
+                            th:id="headingOne + ${iterStat.index + 2}">
+                            <h4 class="panel-title">
+                                <a data-toggle="collapse"
+                                    data-parent="#accordion"
+                                    th:href="'#record' + ${iterStat.index + 2}"
+                                    aria-expanded="true"
+                                    aria-controls="collapseOne"
+                                    th:text="${records[iterStat.index + 2].name}">
+                                </a>
+                            </h4>
+                        </div>
+                        <div th:id="'record' + ${iterStat.index + 2}"
+                            class="panel-collapse collapse in"
+                            role="tabpanel" aria-labelledby="headingOne">
+                            <div class="panel-body"
+                                th:text="${records[iterStat.index + 2].attack}">
+                            </div>
+                        </div>
+                    </div>
+                </div>
     </div>
 </div>
-
-
+    </form>
 </body>
 </html>
